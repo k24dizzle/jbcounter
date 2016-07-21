@@ -1,2 +1,2 @@
 # jbcounter
-chrome extension
+chrome extension/gamechanger
