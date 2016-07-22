@@ -1,33 +1,13 @@
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
 <html>
   <head>
     <title>Welcome to the JTBCounter++</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
-
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="status"></div>
-    <button> Button </button>
-    <img id="image-result" hidden>
-    <button id="linkHere">Check out this button!</button>
+    <div id="header">JB COUNTER </div>
+    <div id="count">0</div>
+    <button id="jtb">Check out this button!</button>
   </body>
 </html>
 
