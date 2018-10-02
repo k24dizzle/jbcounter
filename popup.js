@@ -1,6 +1,8 @@
+var a = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
-    // alert('nick has no knees');
-    
+    //alert('nick has no knees');
+
     // on load, if there's a value in the storage, load it up
     chrome.storage.sync.get('count', function(result) {
         console.log(result.count);
@@ -8,6 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (result.count != null) {
             $("#count").html(result.count);
         }
+
+        //timer
+        var date = new Date();
+		$("#timer").html(date.getHours() + "h " + date.getMinutes() + "m " + date.getSeconds() + "s");
+    	a = date.getHours();
+    	if(date.getHours()< a){
+    		// set the count back to 0
+	        $("#count").html(0);
+	        chrome.storage.sync.set({'count':  count.html()}, function() {
+	            console.log('Reset Count');        
+	        });
+    	}
+
     });
     
     // whenever the jtb button is clicked, it executes this function
@@ -30,6 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.style.backgroundColor = cojlors[Math.floor((Math.random() * cojlors.length) + 1)];
 
+        var date = new Date();
+        $("#timer").html(date.getHours() + "h " + date.getMinutes() + "m " + date.getSeconds() + "s");
+        a = date.getHours();
+        if(date.getHours()< a){
+    		// set the count back to 0
+	        $("#count").html(0);
+	        chrome.storage.sync.set({'count':  count.html()}, function() {
+	            console.log('Reset Count');        
+	        });
+    	}
+
     });
 
     // whenever the reset button is clicked, executes this function
@@ -40,6 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Reset Count');        
         });
 
-
+       	var date = new Date();
+        $("#timer").html(date.getHours() + "h " + date.getMinutes() + "m " + date.getSeconds() + "s");
+        a = date.getHours();
+        if(date.getHours()< a){
+    		// set the count back to 0
+	        $("#count").html(0);
+	        chrome.storage.sync.set({'count':  count.html()}, function() {
+	            console.log('Reset Count');        
+	        });
+    	}
+    	
     });
 });
