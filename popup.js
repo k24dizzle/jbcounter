@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.storage.sync.set({'count':  count.html()}, function() {
             console.log('Settings saved: ' + count.html());
         });
+
+        //randomizes colors
+        var cojlors = ["red","green","olive","navy","purple","gray","lime"
+        				,"yellow","blue","fuchsia"]
+
+        document.body.style.backgroundColor = cojlors[Math.floor((Math.random() * cojlors.length) + 1)];
+
     });
 
     // whenever the reset button is clicked, executes this function
